@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { APP_CONSTANT } from "../util/constant";
 
-const BASE_URL = "http://127.0.0.1:8000/interview"
+const BASE_URL = "https://ai-interview-platform-zrb5.onrender.com/interview"
 
 export const StartInterviewAPI = async(sessionId) => {
   try {
