@@ -1,0 +1,20 @@
+from enum import Enum
+from typing import Optional
+from pydantic import BaseModel
+
+class InterviewEnumStatus(str,Enum):
+    IN_PROGRESS = "in_progress"
+    COMPLETED = "completed"
+
+class Answer(BaseModel):
+    question :str
+    answer: Optional[str]
+    skip : bool=False
+
+class Interviewsession(BaseModel):
+    session_id: str
+    questions: list[str] = []
+    status : InterviewEnumStatus = InterviewEnumStatus.IN_PROGRESS
+    answers: list[Answer] = []
+    current_index : int = 0
+    introText : str=""
